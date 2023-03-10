@@ -3,7 +3,7 @@ import { AppContext } from '../AppContext';
 import { Helmet } from 'react-helmet';
 
 export const PageWelcome = () => {
-	const { appTitle, message } = useContext(AppContext);
+	const { appTitle, message, skills, jobs } = useContext(AppContext);
 
 	return (
 		<div className="pageWelcome">
@@ -11,7 +11,10 @@ export const PageWelcome = () => {
 				<title>{appTitle} - Welcome</title>
 			</Helmet>
 			<p>Message: "{message}"</p>
-			{/* <p>This site has <strong>{jobs.length}</strong> jobs and <strong>{skills.length}</strong> skills.</p> */}
+			<p>
+				This site has <strong>{jobs.length}</strong> jobs and{' '}
+				<strong>{skills.length}</strong> skills.
+			</p>
 		</div>
 	);
 };
